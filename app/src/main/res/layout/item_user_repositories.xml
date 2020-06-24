@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp16"
+    android:layout_marginEnd="@dimen/dp16"
+    android:layout_marginBottom="@dimen/dp12"
+    app:cardCornerRadius="@dimen/dp6">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp16"
+        android:paddingEnd="@dimen/dp16"
+        android:paddingTop="@dimen/dp8"
+        android:paddingBottom="@dimen/dp8">
+
+        <TextView
+            android:id="@+id/tv_repository_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp18"
+            android:textStyle="bold"
+            tools:text="Repository A"
+            />
+
+        <TextView
+            android:id="@+id/tv_repository_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_repository_name"
+            android:layout_marginBottom="@dimen/dp24"
+            tools:text="This is repository description"
+            />
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_repository_description">
+
+            <TextView
+                android:id="@+id/tv_repository_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/layout_repository_watchers"
+                android:layout_marginEnd="@dimen/dp48"
+                android:textStyle="bold"
+                tools:text="Kotlin"
+                />
+
+            <LinearLayout
+                android:id="@+id/layout_repository_fork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="@dimen/dp12"
+                    android:layout_height="@dimen/dp12"
+                    android:layout_marginEnd="@dimen/dp6"
+                    android:contentDescription="@string/content_description_repository_fork"
+                    app:srcCompat="@drawable/ic_fork"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_repository_forks_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="0"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_repository_stargazers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp8"
+                android:layout_toStartOf="@id/layout_repository_fork"
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="@dimen/dp12"
+                    android:layout_height="@dimen/dp12"
+                    android:layout_marginEnd="@dimen/dp6"
+                    android:contentDescription="@string/content_description_repository_star"
+                    app:srcCompat="@drawable/ic_star"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_repository_stargazers_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="0"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_repository_watchers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/layout_repository_stargazers"
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="@dimen/dp12"
+                    android:layout_height="@dimen/dp12"
+                    android:layout_marginEnd="@dimen/dp6"
+                    android:contentDescription="@string/content_description_repository_watch"
+                    app:srcCompat="@drawable/ic_watch"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_repository_watchers_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp8"
+                    tools:text="0"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

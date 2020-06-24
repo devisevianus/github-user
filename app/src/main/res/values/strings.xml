@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Github User</string>
+
+    <!-- main -->
+    <string name="content_description_user_avatar">User avatar</string>
+    <string name="hint_search_users">Search Github users</string>
+    <string name="label_not_found">Users not found</string>
+    <string name="message_exit_app">Please click BACK again to exit</string>
+    <string name="message_limit_exceed">You have exceeded the limit. Try again later</string>
+
+    <!-- user detail -->
+    <string name="content_description_repository_watch">Watchers count</string>
+    <string name="content_description_repository_star">Stargazers count</string>
+    <string name="content_description_repository_fork">Forks count</string>
+    <string name="content_description_empty_repository">No repository</string>
+    <string name="label_followers">Followers</string>
+    <string name="label_following">Following</string>
+    <string name="label_starred">Starred</string>
+    <string name="label_repositories">Repositories</string>
+    <string name="title_user_detail">User Detail</string>
+
+</resources>

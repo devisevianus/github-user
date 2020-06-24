@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".core.main.MainActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp8"
+        android:paddingEnd="@dimen/dp8"
+        android:paddingTop="@dimen/dp8"
+        android:paddingBottom="@dimen/dp16"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/colorCyanPrimary"
+        app:contentInsetStart="@dimen/dp0"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- EditText Search -->
+        <EditText
+            android:id="@+id/et_search_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/dp48"
+            android:paddingStart="@dimen/dp16"
+            android:paddingEnd="@dimen/dp16"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="@dimen/dp8"
+            android:maxLines="1"
+            android:maxLength="36"
+            android:lines="1"
+            android:inputType="textNoSuggestions"
+            android:ellipsize="end"
+            android:hint="@string/hint_search_users"
+            android:background="@color/colorWhite"
+            android:importantForAutofill="no"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- SwipeRefreshLayout -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- RecyclerView user list -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_users"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                />
+
+            <!-- Layout not found -->
+            <LinearLayout
+                android:id="@+id/layout_no_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_no_data"
+                    tools:ignore="ContentDescription"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_not_found"
+                    android:textSize="@dimen/sp21"
+                    tools:text="@string/label_not_found"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
