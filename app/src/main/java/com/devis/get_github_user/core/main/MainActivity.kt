@@ -45,7 +45,6 @@ class MainActivity : BaseActivity(), MainView, MainAdapter.OnClickListener {
     private var mClickBackCounter = 0
     private var mLoadMore = false
     private var mIsRefreshData = false
-    private var mIsInitial = true
 
     private val mTextWatcherListener : TextWatcher = object : TextWatcher {
         override fun afterTextChanged(s: Editable?) {
@@ -211,7 +210,7 @@ class MainActivity : BaseActivity(), MainView, MainAdapter.OnClickListener {
         mLoadMoreListener =
             object : EndlessRecyclerViewScrollListener(linearLayoutManager) {
                 override fun onLoadMore(page: Int, totalItemsCount: Int) {
-                    if (mKeyword.isNotEmpty() && !mIsInitial) {
+                    if (mKeyword.isNotEmpty()) {
                         mPage++
                         loadData()
                         mLoadMore = false
